@@ -46,7 +46,9 @@ async def tts(request: TTSRequest):
     if speed is None:
         speed = speaker.speed
 
+    print('111111')
     data = tts_inferencer.infer(speaker.audio, speaker.text, gen_text, speed)
+    print('222222')
     sr = tts_config['mel_spec']['target_sample_rate']
 
     if wave_type == 'base64':
@@ -89,4 +91,5 @@ async def get_status():
 
 if __name__ == '__main__':
     import uvicorn
+    print(f'TTS Service running on port {http_config["port"]} ...' )
     uvicorn.run(app, host=http_config['host'], port=http_config['port'])

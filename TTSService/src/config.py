@@ -29,7 +29,7 @@ tts = dict(
 
     ),
 
-    device = 'cuda:0',
+    device = 'cpu',
 )
 
 http = dict(

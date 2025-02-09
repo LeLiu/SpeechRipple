@@ -9,7 +9,7 @@ from f5_tts.model import CFM
 from f5_tts.model.utils import get_tokenizer, convert_char_to_pinyin
 
 from config import tts as tts_config
-from src.util import app_paths
+from util import app_paths
 
 
 def _load_vocos(vocos_path, device):

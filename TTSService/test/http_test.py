@@ -1,6 +1,10 @@
 import requests
-from config import http as http_config
 
+http_config = dict(
+    host = '127.0.0.1',
+    port = 8000,
+    wave_dir = 'temp/gen_wave'
+)
 # test http with wave_type:url
 def test_tts_http_01():
     # 构建测试数据
@@ -12,7 +16,6 @@ def test_tts_http_01():
 
     # 发送 POST 请求到 HTTP 服务
     response = requests.post(f"http://{http_config['host']}:{http_config['port']}/tts/", json=test_data)
-
     # 检查响应状态码
     if response.status_code == 200:
         # 解析响应数据
